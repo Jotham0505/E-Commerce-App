@@ -1,4 +1,5 @@
 
+import 'package:ecommerce/features/authentication/controllers/onborading_controller.dart';
 import 'package:ecommerce/features/authentication/screens/widgets/nextbutton.dart';
 import 'package:ecommerce/features/authentication/screens/widgets/skip.dart';
 import 'package:ecommerce/features/authentication/screens/widgets/onboarding_page.dart';
@@ -6,6 +7,7 @@ import 'package:ecommerce/features/authentication/screens/widgets/dot.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class OnBoardingScreen extends StatelessWidget {
@@ -13,11 +15,15 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(onBoardingController());
     return Scaffold(
       body: Stack(
         children: [
           // Horizontal Scrollable pages
           PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
+            
             children: [
               OnBoardingPage(
                   image: TImages.onBoardingImage1,
