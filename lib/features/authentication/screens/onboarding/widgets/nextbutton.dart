@@ -16,12 +16,13 @@ class onBoardingNetButton extends StatelessWidget {
     final controller = Get.put(onBoardingController());
     final dark = THelperFunctions.isDarkMode(context);
     return Positioned(
-      bottom: TDeviceUtils.getBottomNavigationBarHeight(),
-      right: TSizes.defaultSpace,
+      bottom: 40,
+      right: 15,
       child: ElevatedButton(
         onPressed: () => controller.nextPage(),
         child: Icon(
-          Icons.keyboard_arrow_right_sharp
+          Icons.keyboard_arrow_right_sharp,
+          size: 20,
         ),
         style: ElevatedButton.styleFrom(shape: CircleBorder(), backgroundColor: dark? TColors.primary: Colors.black),
       ),
