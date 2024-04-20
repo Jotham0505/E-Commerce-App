@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/constants/colors.dart';
-import '../../utils/helpers/helper_functions.dart';
+import '../../../utils/constants/colors.dart';
+import '../../../utils/helpers/helper_functions.dart';
 
 class loginDivider extends StatelessWidget {
   const loginDivider({
-    super.key,
+    super.key, required this.data,
 
   });
 
-
+  final String data;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class loginDivider extends StatelessWidget {
           ),
         ),
         Text(
-          'Or Sign in with',
+         data,
           style: Theme.of(context).textTheme.labelMedium,
         ),
         Flexible(
