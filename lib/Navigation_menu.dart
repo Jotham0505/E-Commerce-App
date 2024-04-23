@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 
@@ -7,19 +8,37 @@ class NavigationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(NavigationController());
     return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Iconsax.shop), label: 'Home'),
-          NavigationDestination(icon: Icon(Iconsax.heart), label: 'Home'),
-          NavigationDestination(icon: Icon(Iconsax.user), label: 'Home'),
-        ],
-        
+      bottomNavigationBar: Obx(
+        () => NavigationBar(
+          height: 80,
+          elevation: 0,
+          selectedIndex: controller.selectedIndex.value,
+          onDestinationSelected: (index) => controller.selectedIndex.value = index,
+          destinations: [
+            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: 'shop'),
+            NavigationDestination(icon: Icon(Iconsax.heart), label: 'favourites'),
+            NavigationDestination(icon: Icon(Iconsax.user), label: 'uesr'),
+          ],
+          
+        ),
       ),
       body: Container(
-        
+
       ),
     );
   }
+}
+
+
+class NavigationController extends GetxController {
+  final Rx<int> selectedIndex = 0.obs;
+  final screens = [
+    Container(color: Colors.green,),
+    Container(color: Colors.purple,),
+    Container(color: Colors.orange,),
+    Container(color: Colors.blue,),
+  ];
 }

@@ -1,3 +1,4 @@
+import 'package:ecommerce/features/authentication/screens/login/login.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:ecommerce/utils/constants/text_strings.dart';
@@ -54,7 +55,7 @@ class ResetPassword extends StatelessWidget {
 
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){}, child: Text(TTexts.done)),
+              child: ElevatedButton(onPressed: () => Get.to(() => LoginScreen()), child: Text(TTexts.done)),
             ),
             SizedBox(
               height: TSizes.spaceBtwItems,
