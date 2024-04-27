@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce/common/widgets/appbar/app_bar.dart';
+import 'package:ecommerce/common/widgets/carousel%20banner/rounded_image_banner.dart';
 import 'package:ecommerce/common/widgets/custom%20shapes/containers/circular%20_container.dart';
 import 'package:ecommerce/common/widgets/custom%20shapes/containers/searchbar_container.dart';
 import 'package:ecommerce/common/widgets/custom%20shapes/curved%20shapes/curved_edges.dart';
@@ -7,6 +11,7 @@ import 'package:ecommerce/common/widgets/horizontal%20image%20widget/Horizontal_
 import 'package:ecommerce/common/widgets/products_cart/cart_menu_icon.dart';
 import 'package:ecommerce/common/widgets/texts/section_Heading.dart';
 import 'package:ecommerce/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:ecommerce/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
@@ -30,46 +35,35 @@ class HomeScreen extends StatelessWidget {
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
-                  ThemeAppBar(), // APPBAR 
+                  ThemeAppBar(), // APPBAR
 
                   SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  // SEARCH BAR 
-                  TSearchContainer(text: 'Search in Store',),
+                  // SEARCH BAR
+                  TSearchContainer(
+                    text: 'Search in Store',
+                  ),
                   SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
                   // CATEGORIES
                   horizontalListViewwidget(), // horizontal List view circular items aalso the heading which consists of the the appbar is in this widget
-                  
                 ],
               ),
             ),
 
-            // Body 
-            Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: Container(
-                decoration: BoxDecoration(  
-
-                ),
-                child: ClipRRect(child: Image(image: AssetImage(TImages.promoBanner1),fit: BoxFit.cover),borderRadius: BorderRadius.circular(TSizes.md),),
-              ),
-            )
-
+            // Body
+            TPromoSlider(Banners: [
+              TRoundedImage(ImageUrl: TImages.promoBanner1, applyImageRadius: false),
+              TRoundedImage(ImageUrl: TImages.promoBanner2, applyImageRadius: true),
+              TRoundedImage(ImageUrl: TImages.promoBanner3, applyImageRadius: true,),
+            ],)
           ],
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
 
 
