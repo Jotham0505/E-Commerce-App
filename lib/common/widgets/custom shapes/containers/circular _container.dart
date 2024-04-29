@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 class TCircularContainer extends StatelessWidget {
   const TCircularContainer({
-    super.key, this.width = 400 , this.height = 350, this.radius = 400, this.padding = 0, this.child, this.backgroundColor = TColors.white, this.margin,
+    super.key, this.width = 400 , this.height = 350, this.radius = 400, this.padding , this.child, this.backgroundColor = TColors.white, this.margin,
   });
 
   final double ? width;
   final double ? height;
   final double  radius; 
-  final double  padding;
+  final EdgeInsets ? padding;
   final Widget ? child;
   final Color backgroundColor;
   final EdgeInsets ?  margin;
@@ -20,11 +20,12 @@ class TCircularContainer extends StatelessWidget {
       width: width,
       height: height,
       margin: margin,
-      padding: EdgeInsets.all(padding),
+      padding: padding,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         color: backgroundColor
       ),
+      child: child,
 
     );
   }
