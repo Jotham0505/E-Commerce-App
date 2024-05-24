@@ -1,6 +1,7 @@
 import 'package:ecommerce/common/styles/shadows.dart';
 import 'package:ecommerce/common/widgets/carousel%20banner/rounded_image_banner.dart';
 import 'package:ecommerce/common/widgets/custom%20shapes/containers/circular%20_container.dart';
+import 'package:ecommerce/common/widgets/icons/t_circullar_icons.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
@@ -56,8 +57,26 @@ class TProductVertical extends StatelessWidget {
                     style: Theme.of(context).textTheme.labelLarge!.apply(color: Colors.black),
                   ),
                 ),
+                
+                // thumnail, like button and discount tag
+                Positioned(child: TCircularIcon(dark: dark), top: 0, right: 0,),
 
-                TCircularIcon(dark: dark)
+                // details
+
+                Padding(
+                  padding:  const EdgeInsets.only(left: TSizes.sm),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Green Nike Air Shoes',
+                        style: Theme.of(context).textTheme.titleSmall,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                        
+                      ),
+                    ],
+                  ),
+                ),
 
               ],
             ),
@@ -68,22 +87,3 @@ class TProductVertical extends StatelessWidget {
   }
 }
 
-class TCircularIcon extends StatelessWidget {
-  const TCircularIcon({
-    super.key,
-    required this.dark,
-  });
-
-  final bool dark;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
-        color: dark ? TColors.black.withOpacity(0.9) : TColors.white.withOpacity(0.9),
-      ),
-      child: IconButton(icon: Icon(Iconsax.heart5),onPressed: (){},),
-    );
-  }
-}
