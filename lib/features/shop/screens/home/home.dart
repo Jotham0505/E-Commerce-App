@@ -9,6 +9,7 @@ import 'package:ecommerce/common/widgets/custom%20shapes/containers/searchbar_co
 import 'package:ecommerce/common/widgets/custom%20shapes/curved%20shapes/curved_edges.dart';
 import 'package:ecommerce/common/widgets/custom%20shapes/curved%20shapes/curved_edges_widget.dart';
 import 'package:ecommerce/common/widgets/horizontal%20image%20widget/Horizontal_Image.dart';
+import 'package:ecommerce/common/widgets/layout/grid_layout.dart';
 import 'package:ecommerce/common/widgets/products/product_card/vertical_product.dart';
 import 'package:ecommerce/common/widgets/texts/section_Heading.dart';
 import 'package:ecommerce/features/shop/screens/home/widgets/home_appbar.dart';
@@ -68,17 +69,24 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: TSectionHeading(title: 'Popular Products', onPressed: (){}),
+            ),
             
             SizedBox(
-              height: TSizes.spaceBtwSections,
+              height: TSizes.spaceBtwItems,
             ),
             // Product card
-            TProductVertical()
+            TGridLayout(itemCount: 6, itemBuilder: (BuildContext , int ) => TProductVertical()),
           ],
         ),
       ),
     );
   }
 }
+
+
 
 

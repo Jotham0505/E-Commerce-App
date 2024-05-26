@@ -23,7 +23,7 @@ class NavigationMenu extends StatelessWidget {
           backgroundColor: dark ? TColors.black: Colors.white,
           destinations: [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Shop'),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
             NavigationDestination(icon: Icon(Iconsax.heart), label: 'Favourites'),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
