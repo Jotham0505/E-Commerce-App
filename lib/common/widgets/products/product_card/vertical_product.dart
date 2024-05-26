@@ -99,13 +99,10 @@ class TProductVertical extends StatelessWidget {
                             )
                           ],
                         ),
-                        SizedBox(
-                          height: TSizes.spaceBtwItems / 2,
-                        ),
+                        Spacer(),
 
 
                         Row(
-                          
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
