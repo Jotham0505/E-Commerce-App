@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   // SEARCH BAR
                   TSearchContainer(
-                    text: 'Search in Store',
+                    text: 'Search in Store', searchbarSize: TSizes.defaultSpace,
                   ),
                   SizedBox(
                     height: TSizes.spaceBtwItems,

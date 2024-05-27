@@ -9,18 +9,19 @@ import '../../../../utils/constants/colors.dart';
 
 class TSearchContainer extends StatelessWidget {
   const TSearchContainer({
-    super.key, required this.text, this.icon, this.showBackground = true, this.showBorder = true,
+    super.key, required this.text, this.icon, this.showBackground = true, this.showBorder = true, required this.searchbarSize,
   });
 
   final String text;
   final IconData ? icon;
   final bool showBackground, showBorder;
+  final double searchbarSize;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+      padding: EdgeInsets.symmetric(horizontal: searchbarSize),
       child: Container(
         width: TDeviceUtils.getScreenWidth(context),
     

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const TAppBar({super.key, this.title, required this.showbackArrow, this.leadingIcon, this.actions, this.leadingOnPressed});
+  const TAppBar({super.key, this.title, this.showbackArrow = false, this.leadingIcon, this.actions, this.leadingOnPressed});
 
   final Widget ? title;
   final bool showbackArrow;
@@ -18,7 +18,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: TSizes.defaultSpace
+        horizontal: TSizes.md
       ),
       child: AppBar(
         automaticallyImplyLeading: false,
