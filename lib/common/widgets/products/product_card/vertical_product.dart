@@ -36,6 +36,7 @@ class TProductVertical extends StatelessWidget {
           children: [
             // Thumbnail, wishlist button, discount icon
             TCircularContainer(
+              
               radius: TSizes.cardRadiusLg,
               backgroundColor: dark
                   ? TColors.dark
@@ -63,7 +64,7 @@ class TProductVertical extends StatelessWidget {
                   ),
                   
                   // thumnail, like button and discount tag
-                  Positioned(child: TCircularIcon(dark: dark), top: 0, right: 0,),
+                  Positioned(child: TCircularIcon(dark: dark, icon: Iconsax.heart5, onPressed: () {  },iconsize: 11, color: Colors.red,), top: 0, right: 0,),
                   
                   
                   // details

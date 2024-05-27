@@ -1,6 +1,8 @@
 import 'package:ecommerce/common/widgets/texts/section_Heading.dart';
+import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
+import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class horizontalListViewwidget extends StatelessWidget {
@@ -10,6 +12,7 @@ class horizontalListViewwidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Padding(
       padding: EdgeInsets.only(left: 30),
       child: Column(
@@ -34,11 +37,12 @@ class horizontalListViewwidget extends StatelessWidget {
                       width: 56,
                       padding: EdgeInsets.all(TSizes.md),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: dark ? TColors.dark : TColors.white,
                         borderRadius: BorderRadius.circular(100)
                       ),
                       child: Image(
-                        image: AssetImage(TImages.shoeIcon),
+                        image: AssetImage(TImages.shoeIcon,),
+                        color: dark ? TColors.white : TColors.dark,
                       ),
                     ),
                     

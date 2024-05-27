@@ -6,10 +6,15 @@ import 'package:iconsax/iconsax.dart';
 class TCircularIcon extends StatelessWidget {
   const TCircularIcon({
     super.key,
-    required this.dark,
+    this.dark = true, required this.icon, this.iconsize, required this.onPressed, required this.color,
   });
 
   final bool dark;
+  final IconData icon;
+  final double? iconsize;
+  final VoidCallback onPressed;
+  final Color color;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +25,7 @@ class TCircularIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
         color: dark ? TColors.black.withOpacity(0.9) : TColors.white.withOpacity(0.9),
       ),
-      child: IconButton(icon: Icon(Iconsax.heart5),onPressed: (){},iconSize: 10.5,),
+      child: IconButton(icon: Icon(icon),onPressed: onPressed,iconSize: iconsize,color: color),
     );
   }
 }
