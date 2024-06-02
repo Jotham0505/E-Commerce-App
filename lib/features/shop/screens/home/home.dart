@@ -50,7 +50,10 @@ class HomeScreen extends StatelessWidget {
                     height: TSizes.spaceBtwItems,
                   ),
                   // CATEGORIES
-                  horizontalListViewwidget(), // horizontal List view circular items aalso the heading which consists of the the appbar is in this widget
+                  horizontalListViewwidget(), 
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  )// horizontal List view circular items aalso the heading which consists of the the appbar is in this widget
                 ],
               ),
             ),
