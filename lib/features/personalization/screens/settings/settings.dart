@@ -2,12 +2,16 @@ import 'package:ecommerce/common/widgets/appbar/app_bar.dart';
 import 'package:ecommerce/common/widgets/custom%20shapes/containers/primary_header_container.dart';
 import 'package:ecommerce/common/widgets/icons/t_circullar_icons.dart';
 import 'package:ecommerce/common/widgets/images/TcircularImage.dart';
+import 'package:ecommerce/common/widgets/list_tiles/settings_menu_tile.dart';
+import 'package:ecommerce/common/widgets/list_tiles/userprofiletile.dart';
+import 'package:ecommerce/common/widgets/texts/section_Heading.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce/Navigation_menu.dart';
+import 'package:iconsax/iconsax.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -38,23 +42,7 @@ class SettingScreen extends StatelessWidget {
 
                   Padding(
                     padding: EdgeInsets.only(bottom: 25),
-                    child: ListTile(
-                      leading: Container(
-                        child: Image(
-                          image: AssetImage(TImages.user),
-                          width: 50,
-                          height: 50,
-                        ),
-                      ),
-                      title: Text(
-                        'Jotham Emmanuel Cheeran',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                      subtitle: Text(
-                        'jothamemmanuelcheeran@gmail.com',
-                        style: Theme.of(context).textTheme.bodySmall
-                      ),
-                    ),
+                    child: TUserProfileTile(),
                   ),
                   
                 ],
@@ -62,9 +50,43 @@ class SettingScreen extends StatelessWidget {
             ),
 
             // Body
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  TSectionHeading(title: 'Account Settings',showActionButton: false,),
+                  SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
+                  TSettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subtitle: 'Set shopping delivery address', onpressed: (){},),
+                  TSettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subtitle: 'Add, remove products and move to checkout', onpressed: (){},),
+                  TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subtitle: 'In-progress and completed order', onpressed: (){},),
+                  TSettingMenuTile(icon: Iconsax.bank, title: 'Bank Account', subtitle: 'Withdraw balance to registered bank account', onpressed: (){},),
+                  TSettingMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subtitle: 'List of all the discounted coupons', onpressed: (){},),
+                  TSettingMenuTile(icon: Iconsax.notification, title: 'My Notifications', subtitle: 'Set any kind of notification messages', onpressed: (){},),
+                  TSettingMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subtitle: 'Manage data usage and connected accounts', onpressed: (){},),
+
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+                  TSectionHeading(title: 'App Settings',showActionButton: false,),
+                  SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
+                  TSettingMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subtitle: 'Upload data to your Cloud Firebase', onpressed: (){},),
+                   TSettingMenuTile(icon: Iconsax.location, title: 'Geolocation', subtitle: 'Set recommendation based on location', trailing: Switch(value: true,onChanged: (value){},),),
+                    TSettingMenuTile(icon: Iconsax.security_user, title: 'Safe Mode', subtitle: 'Search result is safe for all ages', trailing: Switch(value: false, onChanged: (value){}),),
+                     TSettingMenuTile(icon: Iconsax.image, title: 'HD Image Quality', subtitle: 'Upload data to your Cloud Firebase', trailing: Switch(value: false, onChanged: (value){}),),
+                  
+
+                ],
+              ),
+            )
           ],
         ),
       ),
     );
   }
 }
+
+
