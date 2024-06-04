@@ -5,6 +5,7 @@ import 'package:ecommerce/common/widgets/images/TcircularImage.dart';
 import 'package:ecommerce/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:ecommerce/common/widgets/list_tiles/userprofiletile.dart';
 import 'package:ecommerce/common/widgets/texts/section_Heading.dart';
+import 'package:ecommerce/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
@@ -42,7 +43,7 @@ class SettingScreen extends StatelessWidget {
 
                   Padding(
                     padding: EdgeInsets.only(bottom: 25),
-                    child: TUserProfileTile(),
+                    child: TUserProfileTile(onpressed: () => Get.to(() => ProfileScreen()),),
                   ),
                   
                 ],
