@@ -3,11 +3,13 @@ import 'package:ecommerce/common/widgets/carousel%20banner/rounded_image_banner.
 import 'package:ecommerce/common/widgets/custom%20shapes/containers/circular%20_container.dart';
 import 'package:ecommerce/common/widgets/icons/t_circullar_icons.dart';
 import 'package:ecommerce/common/widgets/texts/product_title.dart';
+import 'package:ecommerce/features/shop/screens/product_details/product_details.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TProductVertical extends StatelessWidget {
@@ -21,7 +23,7 @@ class TProductVertical extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);;
 
     return GestureDetector(
-      onTap: (){},
+      onTap: () => Get.to(() => ProductDetailScreen()),
       child: Container(
         width: 180,
         padding: EdgeInsets.all(1),
@@ -46,6 +48,7 @@ class TProductVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   TRoundedImage(
+                    borderRadius: TSizes.sm,
                     ImageUrl: TImages.productImage1,
                     applyImageRadius: true,
                   ),
