@@ -12,7 +12,7 @@ class TproductTitleText extends StatelessWidget {
   final int maxLines;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { // ECommernce PRoduct title description 
     return Padding(
       padding:  const EdgeInsets.only(left: TSizes.sm),
       child: Column(
