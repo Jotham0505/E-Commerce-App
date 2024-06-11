@@ -1,9 +1,12 @@
 import 'package:ecommerce/common/widgets/custom%20shapes/containers/circular%20_container.dart';
+import 'package:ecommerce/common/widgets/images/TcircularImage.dart';
 import 'package:ecommerce/common/widgets/texts/product_title.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
+import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class TProductMetaData extends StatelessWidget {
   const TProductMetaData({super.key});
@@ -48,16 +51,54 @@ class TProductMetaData extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(
+          height: TSizes.spaceBtwItems/1.5,
+        ),
 
         // title
         TproductTitleText(
           text: "Green Nike Air shoes",
-        )
+        ),
+        SizedBox(
+          height: TSizes.spaceBtwItems/1.5,
+        ),
 
         //stock status
+        Row(
+          children: [
+            TproductTitleText(text: 'Status'),
+            SizedBox(
+              width: TSizes.spaceBtwItems,
+            ),
+            Text('In Stock', style: Theme.of(context).textTheme.titleMedium,)
+          ],
+        ),
 
+
+        SizedBox(
+          height: 10,
+        ),
        
         // brand
+        Row(
+          children: [
+            TCircularImage(img: TImages.nikeLogo,width: 32,height: 32,overlarColor: dark ? TColors.white : TColors.black,),
+            Text(
+              'Nike',
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(
+              Iconsax.verify5,
+              color: TColors.primary,
+              size: TSizes.iconXs,
+            )
+          ],
+        ),
 
 
 

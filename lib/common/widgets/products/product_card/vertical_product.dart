@@ -71,69 +71,76 @@ class TProductVertical extends StatelessWidget {
                   
                   
                   // details
-                  Padding(
-                    
-                    padding: EdgeInsets.all(TSizes.sm),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        TproductTitleText(
-                          text: 'Nike Air Shoes',
-                          maxLines: 2,
-                          smallSize: true,
-                        ),
-                        SizedBox(
-                          height: TSizes.spaceBtwItems / 2,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Nike',
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style: Theme.of(context).textTheme.labelMedium,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Icon(
-                              Iconsax.verify5,
-                              color: TColors.primary,
-                              size: TSizes.iconXs,
-                            )
-                          ],
-                        ),
-                        Spacer(),
-
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              '\$35.5',
-                              style: Theme.of(context).textTheme.headlineMedium,
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: dark ? TColors.white : TColors.dark,
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(TSizes.cardRadiusMd),
-                                  bottomRight: Radius.circular(TSizes.productImageRadius)
-                                ),
+                  Positioned(
+                    bottom: 10,
+                    child: Padding(
+                      padding: EdgeInsets.all(TSizes.sm),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TproductTitleText(
+                            text: 'Nike Air Shoes',
+                            maxLines: 2,
+                            smallSize: true,
+                          ),
+                          SizedBox(
+                            height: TSizes.spaceBtwItems / 2,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Nike',
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: Theme.of(context).textTheme.labelMedium,
                               ),
-                              child: SizedBox(
-                                width: TSizes.iconLg * 1.2,
-                                height: TSizes.iconLg * 1.2,
-                                child: Center(
-                                  child: Icon(Iconsax.add, color: dark? TColors.dark : TColors.white,),
-                                ),
+                              SizedBox(
+                                width: 5,
                               ),
-                            )
-                          ],
-                        ),   
-                      ],
+                              Icon(
+                                Iconsax.verify5,
+                                color: TColors.primary,
+                                size: TSizes.iconXs,
+                              )
+                            ],
+                          ),
+                  
+                          SizedBox(
+                            height: 10
+                          ),
+                  
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '\$35.5',
+                                style: Theme.of(context).textTheme.headlineMedium,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                              ),
+                              SizedBox(
+                                width: 45,
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: dark ? TColors.white : TColors.dark,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(TSizes.cardRadiusMd),
+                                    bottomRight: Radius.circular(TSizes.productImageRadius)
+                                  ),
+                                ),
+                                child: SizedBox(
+                                  width: TSizes.iconLg * 1.2,
+                                  height: TSizes.iconLg * 1.2,
+                                  child: Center(
+                                    child: IconButton( icon : Icon(Iconsax.add), color: dark? TColors.dark : TColors.white,onPressed: (){},),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),   
+                        ],
+                      ),
                     ),
                   ),
                 ],

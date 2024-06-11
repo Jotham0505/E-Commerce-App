@@ -29,7 +29,7 @@ class FavouriteScreeen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: EdgeInsets.all(0),
           child: Column(
             children: [
               TGridLayout(
