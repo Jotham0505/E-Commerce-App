@@ -47,6 +47,8 @@ dependencies:
   firebase_storage: ^11.6.0
   iconsax: ^0.0.8
   carousel_slider: ^4.2.1
+  readmore: ^2.2.0
+  flutter_rating_bar: ^4.0.1
 
 
 dev_dependencies:

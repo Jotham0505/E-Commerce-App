@@ -1,3 +1,4 @@
+import 'package:ecommerce/common/widgets/chips/choice_chip.dart';
 import 'package:ecommerce/common/widgets/custom%20shapes/containers/circular%20_container.dart';
 import 'package:ecommerce/common/widgets/texts/product_title.dart';
 import 'package:ecommerce/common/widgets/texts/section_Heading.dart';
@@ -28,15 +29,19 @@ class TPRoductAttribute extends StatelessWidget {
               // Title, price and stock status
               Row(
                 children: [
-                  TSectionHeading(title: 'Variation',showActionButton: false,),
-                  SizedBox(width: TSizes.spaceBtwItems,),
-
+                  TSectionHeading(
+                    title: 'Variation',
+                    showActionButton: false,
+                  ),
+                  SizedBox(
+                    width: TSizes.spaceBtwItems,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                           TproductTitleText(
+                          TproductTitleText(
                             text: 'Price: ',
                             smallSize: true,
                           ),
@@ -59,17 +64,24 @@ class TPRoductAttribute extends StatelessWidget {
                       // stock
                       Row(
                         children: [
-                          TproductTitleText(text: 'Stock: ',smallSize: true,),
-                          Text('In Stock',style: Theme.of(context).textTheme.titleMedium,)
+                          TproductTitleText(
+                            text: 'Stock: ',
+                            smallSize: true,
+                          ),
+                          Text(
+                            'In Stock',
+                            style: Theme.of(context).textTheme.titleMedium,
+                          )
                         ],
                       ),
                     ],
                   ),
                 ],
               ),
-              // Variation description 
+              // Variation description
               TproductTitleText(
-                text: 'This is the description of the product and it can go upto maximum of 4 lines',
+                text:
+                    'This is the description of the product and it can go upto maximum of 4 lines',
                 maxLines: 4,
                 smallSize: true,
               )
@@ -83,15 +95,50 @@ class TPRoductAttribute extends StatelessWidget {
 
         // ATtributes
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TSectionHeading(title: "Colors", showActionButton: false,),
-            SizedBox(
-              height: TSizes.spaceBtwItems/2,
+            TSectionHeading(
+              title: "Colors",
+              showActionButton: false,
             ),
-            ChoiceChip(label: Text('Green'), selected: true)
+            SizedBox(
+              height: TSizes.spaceBtwItems / 2,
+            ),
+            Wrap(
+              spacing: 8,
+              children: [
+                TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
+            TChoiceChip(text: 'Blue', selected: false,onSelected: (value){},),
+            TChoiceChip(text: 'Yellow', selected: false,onSelected: (value){},),
+            TChoiceChip(text: 'Red', selected: false,onSelected: (value){},),
+            TChoiceChip(text: 'Purple', selected: false,onSelected: (value){},),
+              ],
+            )
           ],
-        )
+        ),
+         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TSectionHeading(
+              title: "Size",
+              showActionButton: false,
+            ),
+            SizedBox(
+              height: TSizes.spaceBtwItems / 2,
+            ),
+            Wrap(
+              spacing: 10,
+              children: [
+                TChoiceChip(text: 'EU 36', selected: true,onSelected: (value){}),
+                TChoiceChip(text: 'EU 38', selected: false,onSelected: (value){}),
+                TChoiceChip(text: 'EU 34', selected: false,onSelected: (value){}),   
+              ],
+            )
+          ],
+        ),
       ],
     );
   }
 }
+
+
