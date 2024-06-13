@@ -68,8 +68,6 @@ class TUserReviewCard extends StatelessWidget {
         ),
 
         TCircularContainer(
-          radius: 20,
-          height: 200,
           width: double.infinity,
           backgroundColor: dark ? TColors.darkerGrey : TColors.grey,
           child: Padding(

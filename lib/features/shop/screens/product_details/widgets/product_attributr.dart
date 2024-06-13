@@ -20,9 +20,6 @@ class TPRoductAttribute extends StatelessWidget {
 
         TCircularContainer(
           padding: EdgeInsets.all(TSizes.md),
-          radius: 20,
-          height: 110,
-          width: 350,
           backgroundColor: dark ? TColors.darkerGrey : TColors.grey,
           child: Column(
             children: [

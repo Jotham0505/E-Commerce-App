@@ -7,6 +7,8 @@ import 'package:ecommerce/common/widgets/list_tiles/userprofiletile.dart';
 import 'package:ecommerce/common/widgets/texts/section_Heading.dart';
 import 'package:ecommerce/features/personalization/screens/address/widgets/address.dart';
 import 'package:ecommerce/features/personalization/screens/profile/profile.dart';
+import 'package:ecommerce/features/shop/screens/cart/Cart_screem.dart';
+import 'package:ecommerce/features/shop/screens/checkout/checkout_screen.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
@@ -61,8 +63,8 @@ class SettingScreen extends StatelessWidget {
                     height: TSizes.spaceBtwItems,
                   ),
                   TSettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subtitle: 'Set shopping delivery address', onpressed: () => Get.to(() => UserAddressScreen()),),
-                  TSettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subtitle: 'Add, remove products and move to checkout', onpressed: (){},),
-                  TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subtitle: 'In-progress and completed order', onpressed: (){},),
+                  TSettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subtitle: 'Add, remove products and move to checkout', onpressed: () => Get.to(() => CartScreen()),),
+                  TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subtitle: 'In-progress and completed order', onpressed: () => Get.to(() => OrderScreen()),),
                   TSettingMenuTile(icon: Iconsax.bank, title: 'Bank Account', subtitle: 'Withdraw balance to registered bank account', onpressed: (){},),
                   TSettingMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subtitle: 'List of all the discounted coupons', onpressed: (){},),
                   TSettingMenuTile(icon: Iconsax.notification, title: 'My Notifications', subtitle: 'Set any kind of notification messages', onpressed: (){},),

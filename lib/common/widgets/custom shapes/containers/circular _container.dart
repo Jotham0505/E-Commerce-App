@@ -1,9 +1,20 @@
 import 'package:ecommerce/utils/constants/colors.dart';
+import 'package:ecommerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class TCircularContainer extends StatelessWidget {
   const TCircularContainer({
-    super.key, this.width = 400 , this.height = 350, this.radius = 400, this.padding , this.child, this.backgroundColor = TColors.white, this.margin,this.showBorder = false, this.borderColor = Colors.black, this.borderWidth = 1.0
+    super.key,
+    this.width ,
+    this.height,
+    this.radius = TSizes.cardRadiusLg,
+    this.padding,
+    this.child,
+    this.backgroundColor = TColors.white,
+    this.margin,
+    this.showBorder = false,
+    this.borderColor = Colors.black,
+    this.borderWidth = 1.0,
   });
 
   final double ? width;

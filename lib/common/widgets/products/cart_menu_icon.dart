@@ -1,5 +1,7 @@
+import 'package:ecommerce/features/shop/screens/cart/Cart_screem.dart';
 import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TCartCounterIcon extends StatelessWidget {
@@ -15,7 +17,7 @@ class TCartCounterIcon extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
     return Stack(
       children: [
-        IconButton(onPressed: onPressed, icon: Icon(Iconsax.shopping_bag, color: dark ? Colors.white : Colors.black,)),
+        IconButton(onPressed: () => Get.to(()=>CartScreen()), icon: Icon(Iconsax.shopping_bag, color: dark ? Colors.white : Colors.black,)),
         Positioned(
           right: 0,
           child: Container(
