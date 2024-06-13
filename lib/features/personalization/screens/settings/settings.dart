@@ -5,6 +5,7 @@ import 'package:ecommerce/common/widgets/images/TcircularImage.dart';
 import 'package:ecommerce/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:ecommerce/common/widgets/list_tiles/userprofiletile.dart';
 import 'package:ecommerce/common/widgets/texts/section_Heading.dart';
+import 'package:ecommerce/features/personalization/screens/address/widgets/address.dart';
 import 'package:ecommerce/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
@@ -59,7 +60,7 @@ class SettingScreen extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  TSettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subtitle: 'Set shopping delivery address', onpressed: (){},),
+                  TSettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subtitle: 'Set shopping delivery address', onpressed: () => Get.to(() => UserAddressScreen()),),
                   TSettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subtitle: 'Add, remove products and move to checkout', onpressed: (){},),
                   TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subtitle: 'In-progress and completed order', onpressed: (){},),
                   TSettingMenuTile(icon: Iconsax.bank, title: 'Bank Account', subtitle: 'Withdraw balance to registered bank account', onpressed: (){},),
