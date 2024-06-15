@@ -1,19 +1,19 @@
 import 'package:ecommerce/common/widgets/icons/t_circullar_icons.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
+import 'package:ecommerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TProductQuantityWithAddandRemove extends StatelessWidget {
   const TProductQuantityWithAddandRemove({
     super.key,
-    required this.dark,
   });
 
-  final bool dark;
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [

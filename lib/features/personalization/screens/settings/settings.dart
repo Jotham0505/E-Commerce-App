@@ -9,6 +9,7 @@ import 'package:ecommerce/features/personalization/screens/address/widgets/addre
 import 'package:ecommerce/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerce/features/shop/screens/cart/Cart_screem.dart';
 import 'package:ecommerce/features/shop/screens/checkout/checkout_screen.dart';
+import 'package:ecommerce/features/shop/screens/orders/order_screen.dart';
 import 'package:ecommerce/utils/constants/colors.dart';
 import 'package:ecommerce/utils/constants/image_strings.dart';
 import 'package:ecommerce/utils/constants/sizes.dart';
