@@ -14,7 +14,7 @@ class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { // on borading screen
     final controller = Get.put(onBoardingController());
     return Scaffold(
       body: Stack(
